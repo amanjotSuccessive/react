@@ -79,7 +79,6 @@ Meteor.startup(() => {
         </form>
       </div>
     )
-    console.log('----->?', dbPlayers)
     render(jsx, document.getElementById('render-target'));
   })
 })
