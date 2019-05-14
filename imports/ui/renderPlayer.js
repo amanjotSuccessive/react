@@ -18,7 +18,8 @@ export default class Player extends React.Component {
 
     render() {
         const players = this.props.players
-        if (!players) return (<p>Please add Player to get started </p>)
+        console.log('--->',players)
+        if (!players.length) return (<p>Please add Player to get started </p>)
         const playerList = players.map(player => {
            return ( 
             <div key={`p${player._id}`}>{player.name}  {player.score}

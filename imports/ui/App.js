@@ -7,14 +7,9 @@ import Player from './../ui/renderPlayer';
 export default class App extends React.Component {
 
     renderPlayers(players) {
-        console.log('-.', players)
-        if (players.length === 0) {
-            return (<Player />)
-        }
-        else {
-            return (<Player players={players} />)
-        }
+        return (<Player players={players} />)
     }
+
     render() {
         const hello = 'hello'
         const title = 'title'
