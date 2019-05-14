@@ -1,10 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 export default class TitleBar extends React.Component {
+    subtitle(){
+        if(this.props.subtile){
+            <h2>{this.props.subtile}</h2>
+        }
+    }
     render() {
         return (
-            <div key='titleDiv'>
+            <div id='titleDiv'>
                 <h1 key='title'>MY APP NAME {this.props.title}</h1>
+              {/*   {this.subtitle} */}
             </div>
         )
     }

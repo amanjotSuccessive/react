@@ -1,6 +1,6 @@
 import React from 'react';
 import { Players } from './../api/players'
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 export default class Player extends React.Component {
     remove(id) {
         Players.remove({ _id: id })
@@ -17,18 +17,22 @@ export default class Player extends React.Component {
     }
 
     render() {
-        const player = this.props.player
-        return (
-            <p id={`p${player[0]._id}`}>{player[0].name}  {player[0].score}
-                <button id={`a${player[0]._id}`} onClick={() => { this.addPoint(player[0]) }} >+1 </button>
-                <button id={`s${player[0]._id}`} onClick={() => { this.subPoint(player[0]) }} >-1 </button>
-                <button id={`r${player[0]._id}`} onClick={() => { this.remove(player[0]._id) }} >X </button>
-            </p>
-
-        )
+        const players = this.props.players
+        if (!players) return (<p>Please add Player to get started </p>)
+        const playerList = players.map(player => {
+           return ( 
+            <div key={`p${player._id}`}>{player.name}  {player.score}
+                <button id={`a${player._id}`} onClick={() => { this.addPoint(player) }} >+1 </button>
+                <button id={`s${player._id}`} onClick={() => { this.subPoint(player) }} >-1 </button>
+                <button id={`r${player._id}`} onClick={() => { this.remove(player._id) }} >X </button>
+            </div>
+           )
+        });
+        return ( playerList)
     }
 }
-
+/* 
 Player.propTypes = {
     player: PropTypes.PropTypes.array.isRequired
 }
+ */
