@@ -18,18 +18,24 @@ export default class Player extends React.Component {
 
     render() {
         const players = this.props.players
-        console.log('--->',players)
-        if (!players.length) return (<p>Please add Player to get started </p>)
+        console.log('--->', players)
+        if (!players.length) return (
+            <div>
+                <p className='item__message'>Please add Player to get started
+                </p>
+            </div>)
         const playerList = players.map(player => {
-           return ( 
-            <div key={`p${player._id}`}>{player.name}  {player.score}
-                <button id={`a${player._id}`} onClick={() => { this.addPoint(player) }} >+1 </button>
-                <button id={`s${player._id}`} onClick={() => { this.subPoint(player) }} >-1 </button>
-                <button id={`r${player._id}`} onClick={() => { this.remove(player._id) }} >X </button>
-            </div>
-           )
+            return (
+                <div key={`p${player._id}`} className='wrapper item player player player__name' >{player.name}  {player.score}
+                    <div className='player__actions'>
+                        <button id={`a${player._id}`} className='button button--round' onClick={() => { this.addPoint(player) }} >+1 </button>
+                        <button id={`s${player._id}`} className='button button--round' onClick={() => { this.subPoint(player) }} >-1 </button>
+                        <button id={`r${player._id}`} className='button button--round' onClick={() => { this.remove(player._id) }} >X </button>
+                    </div>
+                </div>
+            )
         });
-        return ( playerList)
+        return (<div> {playerList} </div>)
     }
 }
 /* 

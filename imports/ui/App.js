@@ -11,13 +11,11 @@ export default class App extends React.Component {
     }
 
     render() {
-        const hello = 'hello'
-        const title = 'title'
+        const title = ''
         const dbPlayers = Players.find({}, { sort: { name: 1 } }).fetch(); //position matters
         return (
             <div key='main'>
                 <TitleBar title={title} />
-                <p>{hello}</p>
                 <AddPlayer />
                 {this.renderPlayers(dbPlayers)}
             </div>

@@ -8,8 +8,8 @@ export default class TitleBar extends React.Component {
     }
     render() {
         return (
-            <div id='titleDiv'>
-                <h1 key='title'>MY APP NAME {this.props.title}</h1>
+            <div id='titleDiv' className="title-bar">
+                <h1 className='wrapper' key='title'>MY APP NAME {this.props.title}</h1>
               {/*   {this.subtitle} */}
             </div>
         )
