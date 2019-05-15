@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0px;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    color: #555555;
+    background: #f2f2f2;
+    font-family: Helvetica, sans-serif;
+    font-size: 1.6rem;
+  }
+
+  input, button, select {
+    font-size: 1.3rem;
+  }
+
+  @import './titleBar';
+  @import './wrapper';
+  @import './item';
+  @import './player';
+  @import './form';
+  @import './button'
