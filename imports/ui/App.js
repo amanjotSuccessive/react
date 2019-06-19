@@ -11,7 +11,7 @@ export default class App extends React.Component {
     }
 
     render() {
-        const title = ''
+        const title = 'Initial Title'
         const dbPlayers = Players.find({}, { sort: { name: 1 } }).fetch(); //position matters
         return (
             <div key='main'>
